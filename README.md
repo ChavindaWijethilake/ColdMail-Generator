@@ -15,11 +15,11 @@ This application streamlines the process of reaching out to potential clients by
 ```mermaid
 graph TD
     User[User] -->|Input URL| Streamlit[Streamlit Frontend]
-    Streamlit -->|Extract Content| Scraper[Web Scraper (LangChain)]
+    Streamlit -->|Extract Content| Scraper["Web Scraper (LangChain)"]
     Scraper -->|Clean Text| Utils[Text Cleaner]
     Utils -->|Raw Text| LLM1[LLM - Job Extraction]
     LLM1 -->|JSON Job Data| Portfolio[Portfolio Query Engine]
-    Portfolio -->|Query Skills| VectorDB[(ChromaDB Vector Store)]
+    Portfolio -->|Query Skills| VectorDB[("ChromaDB Vector Store")]
     VectorDB -->|Relevant Links| Portfolio
     Portfolio -->|Job + Links| LLM2[LLM - Email Generation]
     LLM2 -->|Cold Email| Streamlit
